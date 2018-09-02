@@ -14,10 +14,14 @@ pipeline{
 			sh 'mvn test'}
 			}
 		}
-		stage('Deployment'){
+		stage('Create WAR'){
 			steps{
 			withMaven(maaven: '3_1_2'){
-			sh 'mvn deploy'}
+			sh 'mvn install'}
+			}
+		stage('Copy WAR'){
+			steps{
+			sh 'cp /target/myFirstWebApplication.war /var/lib/jenkins/workspace/jen_aws/myFirstWebApplication.war'}
 			}
 		}
 	
