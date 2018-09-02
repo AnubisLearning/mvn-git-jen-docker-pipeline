@@ -4,21 +4,18 @@ pipeline{
 	stages{
 		stage('Compiler'){
 			steps{
-			withMaven(maaven: '3_1_2'){
 			sh 'mvn clean compile'}
-			}
+			
 		}
 		stage('Testing'){
 			steps{
-			withMaven(maaven: '3_1_2'){
 			sh 'mvn test'}
-			}
+			
 		}
 		stage('Create WAR'){
 			steps{
-			withMaven(maaven: '3_1_2'){
 			sh 'mvn install'}
-			}
+			
 		}
 		stage('Copy WAR'){
 			steps{
