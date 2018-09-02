@@ -23,8 +23,8 @@ pipeline{
 		stage('Copy WAR'){
 			steps{
 			sh 'cp /target/myFirstWebApplication.war /var/lib/jenkins/workspace/jen_aws/myFirstWebApplication.war'}
-			}
 		}
+		
 	
 	}
 }
