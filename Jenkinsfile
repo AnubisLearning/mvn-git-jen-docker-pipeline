@@ -19,6 +19,7 @@ pipeline{
 			withMaven(maaven: '3_1_2'){
 			sh 'mvn install'}
 			}
+		}
 		stage('Copy WAR'){
 			steps{
 			sh 'cp /target/myFirstWebApplication.war /var/lib/jenkins/workspace/jen_aws/myFirstWebApplication.war'}
